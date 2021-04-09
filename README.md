@@ -1,4 +1,13 @@
 # code_aqua (codename)
+
 ## A simple webapp project for Software Engineering Lab.
-* Will be updated soon.
-🔥🔥🔥✌
+
+### Language/Framework used
+
+- Django
+- MariaDB
+- Bootstrap
+- Javascript
+- JQuery
+- Will be updated soon.
+  🔥🔥🔥✌
