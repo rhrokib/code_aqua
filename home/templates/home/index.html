@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'home/styles/style.css' %}" />
+    <link rel="icon" href="{% static 'home/images/favicon.png' %}" type="image/gif" sizes="16x16">
+
+
+    <title>Testting</title>
+  </head>
+
+  <header></header>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <div class="logo">
+          <a href="#"><img src="{% static 'home/images/logo1.png' %}" alt="" width="100" /></a>
+        </div>
+        <div id="mainListDiv" class="main_list">
+          <ul class="navlinks">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Account</a></li>
+            <li><img style="margin-top: 18px; border-radius: 50%;" src="{% static 'home/images/DP.jpg' %}" width="30px" alt="" /></li>
+          </ul>
+        </div>
+        <span class="navTrigger">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+      </div>
+    </nav>
+
+    <section class="home"></section>
+    <div style="height: 1000px;">
+      <div class="centered">
+        <section id="intro">
+          <div id="intro-content" class="center-content">
+            <div class="center-content-inner">
+              <div class="content-section content-section-margin">
+                <div class="content-section-grid clearfix">
+                  <a href="#" class="button nav-link">
+                    <div class="bottom"></div>
+
+                    <div class="top">
+                      <div class="label">Let's Go</div>
+
+                      <div class="button-border button-border-left"></div>
+                      <div class="button-border button-border-top"></div>
+                      <div class="button-border button-border-right"></div>
+                      <div class="button-border button-border-bottom"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- just to make scrolling effect possible -->
+      <h2 class="myH2">About Us</h2>
+      <p class="myP">This is a responsive fixed navbar animated on scroll</p>
+      <p class="myP">
+        I took inspiration from ABDO STEIF (<a
+          href="https://codepen.io/abdosteif/pen/bRoyMb?editors=1100"
+          >https://codepen.io/abdosteif/pen/bRoyMb?editors=1100</a
+        >) and Dicson
+        <a href="https://codepen.io/dicson/pen/waKPgQ"
+          >(https://codepen.io/dicson/pen/waKPgQ)</a
+        >
+      </p>
+      <p class="myP">I HOPE YOU FIND THIS USEFULL</p>
+      <p class="myP">Albi</p>
+      <p class="myP">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur soluta iste obcaecati commodi similique eveniet ipsum earum, dignissimos quis praesentium ducimus, facere repellat corrupti natus voluptatibus modi aliquid? Impedit, saepe.
+        Recusandae, rerum. Quis quo officia doloremque! Fuga exercitationem facilis officiis sed architecto accusamus velit recusandae quaerat nulla! Est eligendi iure laborum excepturi odit ut, quae dolorum reprehenderit voluptatum id sit?
+        Blanditiis necessitatibus beatae adipisci suscipit esse sed dolore. Aspernatur dolores iste nostrum, fuga eos distinctio porro culpa, id fugit necessitatibus eum cum sit sint commodi cupiditate odit dolore tenetur. Explicabo?
+      </p>
+    </div>
+
+    <!-- Jquery needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+      $(window).scroll(function () {
+        if ($(document).scrollTop() > 50) {
+          $(".nav").addClass("affix");
+          console.log("OK");
+        } else {
+          $(".nav").removeClass("affix");
+        }
+      });
+    </script>
+  </body>
+
+  <script src="{% static 'home/scripts/homepage.js' %}"></script>
+</html>
