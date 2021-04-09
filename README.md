@@ -5,7 +5,7 @@
 ### Language/Framework used
 
 - Django
-- MariaDB
+- SQLite3
 - Bootstrap
 - Javascript
 - JQuery
