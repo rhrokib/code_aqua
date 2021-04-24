@@ -18,8 +18,8 @@ class Profile(models.Model):
         return f'{self.user.first_name} {self.user.last_name}'
 
 
-    def save(self):
-        super().save()
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
         
         img = Image.open(self.image.path)
         
