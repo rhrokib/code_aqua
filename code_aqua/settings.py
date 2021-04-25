@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_cleanup',
     'crispy_forms',
+    'rest_framework',
     #mine
     'home.apps.HomeConfig',
     'user.apps.UserConfig',
     'login.apps.LoginConfig',
+    'api.apps.ApiConfig',
     # 'profile.apps.ProfileConfig',
 ]
 

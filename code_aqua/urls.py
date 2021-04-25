@@ -21,9 +21,12 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from api import views as api_views
+
 urlpatterns = [
     path('', include('home.urls')),
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),
     
     path('register/', user_views.register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='user/login.html'), name='login'),
