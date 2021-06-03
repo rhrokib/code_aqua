@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-som-6">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Delete Post</legend>
+                    <h2>Are you sure you want to delete "{{object.title}}"?</h2>
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn my-btn-danger my-2 ml-2" type="submit">Yes, Delete</button>
+                    <a class="btn my-btn-primary m-2" href="{% url 'note_detail' object.id %}">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

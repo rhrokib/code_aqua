@@ -1,0 +1,68 @@
+{% extends 'home/base.html'%}
+{% load static %}
+{% block content %}
+<div class="container mt-3">
+  <div class="row page-title">
+    <div class="col-md-1">
+      <h2>My Notes</h2>
+    </div>
+    <a  href="{% url 'note_create' %}"><i class="bi bi-plus-circle  btn-icon btn my-btn-primary  px-4"></i></a>
+  </div>
+  <div class="row">
+    {% for n in notes %}
+    <div class="col-sm-6 col-md-5 col-lg-4 my-3">
+      <div class="card px-3 {{n.color}}">
+        <div class="card-body text-truncate px-2">
+          <div class="card-title">
+            <a href="{% url 'note_detail' n.id %}">
+              {% if n.completed %}
+              <h3 class="note-title-done">
+
+                {{ n.title}}</h3>
+              {% else %}
+              <h3 class="note-title">
+
+                {{ n.title}}</h3>
+              {% endif %}
+              <small class="text-muted">{{n.date}}</small>
+            </a>
+          </div>
+          <hr>
+          <div class="card-text">
+            <p class="note-text">{{n.content}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <!--  -->
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+{% comment %}
+<div class="row green lighten-5">
+  {% for n in notes %}
+  <div class=" card small col s6 m4 l3 red lighten-5">
+    <a href="{% url 'note_detail' n.id %}">
+      <p class="flow-text">{{n.title}}</p>
+    </a>
+    <small>{{n.date}}</small>
+    <p class="note-text">{{n.content}}</p>
+    <i>menu</i>
+  </div>
+  {% endfor %}
+
+</div>
+{% endcomment %}

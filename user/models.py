@@ -1,11 +1,12 @@
 from django.db import models
+from django import forms
 from django.contrib.auth.models import User
 from PIL import Image
 import os
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, max_length=30)
     image = models.ImageField(default='default_profile.png',  upload_to='profile_pics')
     institution = models.CharField(max_length=50)
     location = models.CharField(max_length=50)

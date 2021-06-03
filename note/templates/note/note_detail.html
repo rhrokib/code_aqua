@@ -1,0 +1,56 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8 col-md-6 my-3 ">
+      <div class="card px-3 {{object.color}}">
+        <div class="card-body ">
+          <div class="card-title">
+            <div class="row">
+              <div class="col-sm-9">
+                <h1>
+                  {{object.title}}
+                </h1>
+                <small class="text-muted">{{object.date}}</small>
+              </div>
+              <div class="col-sm-3">
+                <a class="btn my-btn-primary btn-rounded  m-2" href="{% url 'note_update' object.id %}"><i class="bi btn-icon bi-pencil-square"></i></a>
+                <a class="btn my-btn-danger btn-rounded m-2" href="{% url 'note_delete' object.id %}"><i class="bi btn-icon bi-trash"></i></a>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="card-text">
+            <p class="note-text">{{object.content}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock content %}
+
+
+
+
+
+
+    {% comment %}
+    <div class="card">
+      <div class="card-title">
+        <h1>{{object.title}}</h1>
+        <small>{{object.date}}</small>
+        {% if object.author == user %}
+        <div>
+          <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'note_update' object.id %}">Update</a>
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'note_delete' object.id %}">Delete</a>
+        </div>
+        {%endif %}
+      </div>
+      <div class="card-content">
+        <p>{{object.content}}</p>
+      </div>
+    </div>
+  </div>
+  {% endcomment %}

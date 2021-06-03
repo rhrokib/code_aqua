@@ -1,84 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
 body {
-  background: #fafafa;
-  color: #333333;
-  margin-top: 5rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #444444;
-}
-
-ul {
-  margin: 0;
-}
-
-.bg-steel {
-  background-color: #5f788a;
-}
-
-.site-header .navbar-nav .nav-link {
-  color: #cbd5db;
-}
-
-.site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
-}
-
-.site-header .navbar-nav .nav-link.active {
-  font-weight: 500;
-}
-
-.content-section {
+  font-family: 'Alata', 'Open Sans', sans-serif;
   background: #ffffff;
-  padding: 10px 20px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.article-title {
-  color: #444444;
+main {
+  flex: 1 0 auto;
 }
 
-a.article-title:hover {
-  color: #428bca;
-  text-decoration: none;
+
+.navbar {
+  background: #f3e1e1 !important;
 }
 
-.article-content {
-  white-space: pre-line;
+.nav-link {
+  font: inherit;
+  font-size: 16px;
+  color: #666 !important;
 }
 
-.article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
+.my-logo {
+  color: #ff6d70 !important;
+  font: inherit;
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.article-metadata {
-  padding-bottom: 1px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
+.blue {
+  background: #a1cae2;
 }
 
-.article-metadata a:hover {
-  color: #333;
-  text-decoration: none;
+.coral {
+  background: #eec4c4;
 }
 
-.article-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
+.green {
+  background: #d5ecc2;
+
 }
 
-.account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
+.purple {
+  background: #c3aed6;
 }
 
-.account-heading {
-  font-size: 2.5rem;
+.white {
+  background: #f0ece3;
+}
+.teal{
+  background: #b0dbdd;
+}
+
+.text-muted {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.note-title{
+  color: rgb(22, 21, 21);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.note-title-done{
+  color: rgb(22, 21, 21);
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: line-through;
+}
+
+.btn-icon{
+  font-size: 20px;
+  color: #f0f0f0;
+}
+
+.my-btn-primary{
+  background: #74b49b !important;
+  color: #fff;
+}
+
+.my-btn-secondary{
+  background: #6c567b;
+  color: #fff;
+}
+.my-btn-secondary:hover,
+.my-btn-secondary:active{
+  color: rgb(174, 175, 175);
+}
+
+.my-btn-danger{
+  background: #ef6c57;
+  color: #fff;
 }
