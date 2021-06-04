@@ -1,5 +1,7 @@
 {% extends 'home/base.html'%}
 {% load crispy_forms_tags %}
 {% block content %}
-<h1 class="text-center mt-3">কি দেখাবো এইখানে???🤦‍♂️🤦‍♂️🤦‍♂️ </h1>
+<a href="{% url 'budget_create' %}">Create</a>
+<br>
+<a href="{% url 'daily_spend' %}">Daily Spend</a>
 {% endblock %}
