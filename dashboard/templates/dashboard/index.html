@@ -23,7 +23,7 @@
           <div class="card-title">
             <h5>Current Budget
               <a class="daily-spaned-btn" href="{% url 'budget_create' %}"> <i class="bi bi-plus-circle px-3"></i></a>
-              <a class="daily-spaned-btn" href="{% url 'budget_update' budget.id %}"> <i class="bi bi-pencil-square px-1"></i></a>
+              <a class="daily-spaned-btn" href="{%if not budget == None %}{% url 'budget_update' budget.id %} {% else %} # {% endif %}"> <i class="bi bi-pencil-square px-1"></i></a>
             </h5>
           </div>
         </div>
@@ -41,8 +41,7 @@
         <div class="card-header ">
           <div class="card-title d-flex justify-content-around">
             <h5>Avg. Daily Spend<a class="daily-spaned-btn" href="{% url 'daily_spend' %}"> <i
-                  class="bi bi-plus-circle px-3"></i></a> <a class="daily-spaned-btn" href="{% url 'daily_spend' %}"> <i
-                  class="bi bi-pencil-square px-1"></i></a></h5>
+                  class="bi bi-plus-circle px-3"></i></a></h5>
           </div>
 
         </div>
