@@ -56,6 +56,12 @@ main {
 .teal{
   background: #b0dbdd;
 }
+.pink{
+  background: #fcc6dc;
+}
+.lime{
+  background: #bbdfc8;
+}
 
 .text-muted {
   font-family: 'Open Sans', sans-serif;
@@ -98,4 +104,14 @@ main {
 .my-btn-danger{
   background: #ef6c57;
   color: #fff;
+}
+
+.daily-spaned-btn{
+  text-decoration: none;
+  font: inherit;
+  color: #333;
+}
+.daily-spaned-btn:hover,
+.daily-spaned-btn:active{
+  color: #111;
 }

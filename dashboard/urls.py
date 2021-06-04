@@ -5,5 +5,6 @@ from . import forms
 urlpatterns = [
     path('', views.dashboard, name='dashboard'),
     path('create', views.NewBudgetCreate.as_view(), name='budget_create'),
-    path('daily_spend', views.NewDailySpend.as_view(), name='daily_spend'),
+    path('update/<str:pk>', views.BudgetUpdate.as_view(), name='budget_update'),
+    path('daily_spend', views.daily_spend, name='daily_spend'),
 ]

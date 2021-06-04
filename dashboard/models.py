@@ -10,6 +10,7 @@ from user.models import Profile
 class DailySpend(models.Model):
   date = models.DateField(default=timezone.now)
   amount_Spent = models.DecimalField(max_digits=20, decimal_places=2, default=(0.00), null=True)
+  owner = models.ForeignKey(User, on_delete=models.CASCADE)
   
   def __str__(self):
     return self.date.strftime("%m/%d/%Y")
@@ -19,7 +20,7 @@ class DailySpend(models.Model):
 class Budget(models.Model):
   name = models.CharField(max_length=30, null=True)
   start_date = models.DateTimeField(default=timezone.now)
-  owner = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+  owner = models.ForeignKey(User, on_delete=models.CASCADE)
   
   total_budget = models.DecimalField(max_digits=20, decimal_places=2, default=(0.00), null=True, blank=True)
   food_budget = models.DecimalField(max_digits=20, decimal_places=2, default=(0.00), null=True, blank=True)

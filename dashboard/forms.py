@@ -2,8 +2,9 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from user.models import Profile
-from .models import Budget
+from .models import Budget, DailySpend
 from django.urls import reverse_lazy
+from django.utils import timezone
 
 
 class NewBudgetForm(forms.ModelForm):
@@ -29,3 +30,10 @@ class NewBudgetForm(forms.ModelForm):
     #     form.instance.owner = self.request.user
     #     return super().form_valid(form)
     # success_url = '/dashboard'
+
+
+class DailySpendForm(forms.ModelForm):
+
+    class Meta:
+        model = DailySpend
+        fields = ['date', 'amount_Spent']

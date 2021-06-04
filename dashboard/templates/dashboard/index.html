@@ -1,7 +1,106 @@
-{% extends 'home/base.html'%}
+{% extends 'home/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<a href="{% url 'budget_create' %}">Create</a>
-<br>
-<a href="{% url 'daily_spend' %}">Daily Spend</a>
-{% endblock %}
+<style>
+  .box {
+    height: 5px;
+  }
+</style>
+<div class="container-fluid  box blue">
+  <div class="row">
+    <div class="col-3 box coral"></div>
+    <div class="col-3 box green"></div>
+    <div class="col-3 box blue"></div>
+    <div class="col-3 box purple"></div>
+  </div>
+</div>
+
+<div class="container  box">
+  <div class="row d-flex justify-content-between">
+    <div class="col-4  mt-3">
+      <div class="card green text-center ">
+        <div class="card-header ">
+          <div class="card-title">
+            <h5>Current Budget
+              <a class="daily-spaned-btn" href="{% url 'budget_create' %}"> <i class="bi bi-plus-circle px-3"></i></a>
+              <a class="daily-spaned-btn" href="{% url 'budget_update' budget.id %}"> <i class="bi bi-pencil-square px-1"></i></a>
+            </h5>
+          </div>
+        </div>
+        <div class="div card body teal p-2">
+          <div class="card-text">
+            <h3>{{budget.name}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-4  mt-3">
+      <div class="card blue text-center">
+        <div class="card-header ">
+          <div class="card-title d-flex justify-content-around">
+            <h5>Avg. Daily Spend<a class="daily-spaned-btn" href="{% url 'daily_spend' %}"> <i
+                  class="bi bi-plus-circle px-3"></i></a> <a class="daily-spaned-btn" href="{% url 'daily_spend' %}"> <i
+                  class="bi bi-pencil-square px-1"></i></a></h5>
+          </div>
+
+        </div>
+        <div class="div card body coral p-2">
+          <div class="card-text">
+            <h3>৳ {{avg}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-4  mt-3">
+      <div class="card pink text-center">
+        <div class="card-header ">
+          <div class="card-title">
+            <h5>Current Balance</h5>
+          </div>
+        </div>
+        <div class="div card body lime p-2">
+          <div class="card-text">
+            <h3 class="{% if cur_bal < 0 %}text-danger{% endif %}" >৳ {{cur_bal}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row chart mt-4">
+    <div class="col-8 offset-2 text-center">Spending History</div>
+    <img src="" width="200px" alt="">
+  </div>
+
+
+  <div class="col-8 offset-2">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th class"col-4" scope="col">Date</th>
+          <th class"col-4" scope="col">Spent</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in daily %}
+        <tr>
+          <td>{{d.date}}</td>
+          <td>{{d.amount_Spent}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"
+  integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock content %}

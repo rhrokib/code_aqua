@@ -42,6 +42,6 @@ urlpatterns = [
     
     path('profile/', user_views.profile, name='profile'),
     path('notes/', include('note.urls'), name='notes'),
-    path('dashboard/', include('dashboard.urls'), name='dashboard'),
+    path('dashboard/', include('dashboard.urls')),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
