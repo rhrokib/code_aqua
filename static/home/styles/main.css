@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+body {
+  font-family: 'Alata', 'Open Sans', sans-serif;
+  background: #ffffff;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  
+}
+
+main {
+  flex: 1 0 auto;
+  padding-top: 75px;
+}
+
+
+.navbar {
+  background: #f3e1e1 !important;
+}
+
+.nav-link {
+  font: inherit;
+  font-size: 16px;
+  color: #666 !important;
+}
+
+.my-logo {
+  color: #ff6d70 !important;
+  font: inherit;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.blue {
+  background: #a1cae2;
+}
+
+.coral {
+  background: #eec4c4;
+}
+
+.green {
+  background: #d5ecc2;
+
+}
+
+.purple {
+  background: #c3aed6;
+}
+
+.white {
+  background: #f0ece3;
+}
+.teal{
+  background: #b0dbdd;
+}
+.pink{
+  background: #fcc6dc;
+}
+.lime{
+  background: #bbdfc8;
+}
+
+.text-muted {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.note-title{
+  color: rgb(22, 21, 21);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.note-title-done{
+  color: rgb(22, 21, 21);
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: line-through;
+}
+
+.btn-icon{
+  font-size: 20px;
+  color: #f0f0f0;
+}
+
+.my-btn-primary{
+  background: #74b49b !important;
+  color: #fff;
+}
+
+.my-btn-secondary{
+  background: #6c567b;
+  color: #fff;
+}
+.my-btn-secondary:hover,
+.my-btn-secondary:active{
+  color: rgb(174, 175, 175);
+}
+
+.my-btn-danger{
+  background: #ef6c57;
+  color: #fff;
+}
+
+.daily-spaned-btn{
+  text-decoration: none;
+  font: inherit;
+  color: #333;
+}
+.daily-spaned-btn:hover,
+.daily-spaned-btn:active{
+  color: #111;
+}
