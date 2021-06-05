@@ -4,6 +4,22 @@ from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView, DeleteView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Note
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
+def my_notes(request):
+    context = {}
+    
+    try:
+        context['notes'] = Note.objects.filter(author=request.user)
+    except Note.DoesNotExist:
+        context['notes'] = None
+        
+    
+    return render(request, 'note/notes.html', context)
+
+
 
 class AllNotesView(LoginRequiredMixin, ListView):
     model = Note
@@ -12,6 +28,9 @@ class AllNotesView(LoginRequiredMixin, ListView):
     ordering = ['-date']
     paginate_by = 10
     
+    # def get_queryset(self):
+    #     user = get_object_or_404(User, username=self.kwargs.get('username'))
+    #     return Note.objects.filter(author=user).order_by('-date')
 
 class NoteCreateView(LoginRequiredMixin, CreateView):
     model = Note

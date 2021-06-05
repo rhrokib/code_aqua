@@ -3,7 +3,7 @@ from .views import (AllNotesView, NoteCreateView, NoteUpdateView, NoteDeleteView
 from . import views
 
 urlpatterns = [
-    path('', AllNotesView.as_view(), name='notes'),
+    path('', views.my_notes, name='notes'),
     path('note/<int:pk>/', NoteDetailView.as_view(), name='note_detail'),
     path('create', NoteCreateView.as_view(), name='note_create'),
     path('<int:pk>/update', NoteUpdateView.as_view(), name='note_update'),
